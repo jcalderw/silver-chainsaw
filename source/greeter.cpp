@@ -1,10 +1,12 @@
 #include <greeter/greeter.h>
 
+#include <utility>
+
 using namespace greeter;
 
-Greeter::Greeter(std::string _name) : name(_name) {}
+[[maybe_unused]] Greeter::Greeter(std::string _name) : name(std::move(_name)) {}
 
-std::string Greeter::greet(LanguageCode lang) const {
+[[maybe_unused]] std::string Greeter::greet(LanguageCode lang) const {
   switch (lang) {
     default:
     case LanguageCode::EN:
