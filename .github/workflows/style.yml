@@ -11,13 +11,13 @@ on:
 jobs:
   build:
 
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@v1
     
     - name: Install clang-format
-      run: brew install clang-format
+      run: apt install clang-format
 
     - name: configure
       run: cmake -Htest -Bbuild
